@@ -1,0 +1,76 @@
+/* trip-visualizer.component.css */
+.trip-container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.input-section {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+  width: 80px;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:last-child {
+  background-color: #ff4444;
+}
+
+.diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.trip-row {
+  display: flex;
+  align-items: center;
+}
+
+.trip-segment {
+  display: flex;
+  align-items: center;
+}
+
+.code {
+  font-weight: bold;
+  font-family: monospace;
+  padding: 2px 5px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background-color: #333;
+  margin: 0 5px;
+  position: relative;
+}
+
+.continued .line::after {
+  content: "→";
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  font-size: 16px;
+}
+
+.indented {
+  margin-left: 40px;
+}

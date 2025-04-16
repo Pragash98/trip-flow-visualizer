@@ -1,0 +1,26 @@
+<!-- trip-visualizer.component.html -->
+<div class="trip-container">
+  <div class="input-section">
+    <input [(ngModel)]="newStart" placeholder="From (e.g. BLR)" maxlength="3">
+    <input [(ngModel)]="newEnd" placeholder="To (e.g. MAA)" maxlength="3">
+    <button (click)="addTrip()">Add</button>
+    <button (click)="clearAll()">Clear</button>
+  </div>
+
+  <div class="diagram">
+    <ng-container *ngFor="let trip of trips; let i = index">
+      <div class="trip-row" [class.indented]="trip.isDuplicate && !trip.isContinued">
+        <div class="trip-segment" *ngIf="!trip.isContinued || (trip.isContinued && trip.isDuplicate)">
+          <span class="code">{{trip.start}}</span>
+          <span class="line"></span>
+          <span class="code">{{trip.end}}</span>
+        </div>
+        
+        <div class="trip-segment continued" *ngIf="trip.isContinued && !trip.isDuplicate">
+          <span class="line"></span>
+          <span class="code">{{trip.end}}</span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
